@@ -17,7 +17,6 @@ object UdpServer extends App {
   val logger = LoggerFactory.getLogger(UdpServer.getClass)
 
   class UdpEchoService(address: InetSocketAddress) extends Actor {
-
     logger.info("==========[UDP Server Init]==========")
     logger.info("==========[UDP Server Bind Port : " + Constants.PORT + "]==========");
     logger.info("==========[UDP Server Started]==========");

@@ -1,3 +1,7 @@
+import com.typesafe.sbt.SbtStartScript
+
+seq(SbtStartScript.startScriptForClassesSettings: _*)
+
 name := "bracelet_udp_scala"
 
 version := "1.0"
@@ -17,3 +21,6 @@ libraryDependencies += "org.scalikejdbc" %% "scalikejdbc" % "2.2.7"
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.35"
 
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+
+libraryDependencies += "com.typesafe" % "config" % "1.3.0"
+
