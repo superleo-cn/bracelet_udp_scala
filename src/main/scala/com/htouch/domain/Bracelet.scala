@@ -6,7 +6,9 @@ import org.slf4j.LoggerFactory
 
 import scalikejdbc._
 
-class Bracelet {
+class Bracelet extends DBUtil {
+
+  val logger = LoggerFactory.getLogger(Bracelet.getClass)
 
   var startCode: Array[Byte] = null
 
@@ -30,11 +32,10 @@ class Bracelet {
 
   var endCode: Array[Byte] = null
 
+
 }
 
-object Bracelet extends DBUtil {
-  val logger = LoggerFactory.getLogger(Bracelet.getClass)
-
+object Bracelet {
   var INSERT_SQL =
     """
       |INSERT INTO

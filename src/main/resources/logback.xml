@@ -20,7 +20,7 @@
         </encoder>
     </appender>
 
-    <logger name="scalikejdbc" level="debug" additivity="false">
+    <logger name="scalikejdbc" level="info" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 

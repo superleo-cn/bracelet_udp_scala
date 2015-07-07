@@ -19,10 +19,16 @@ object DataParseUtil {
     bytes.map("%02x".format(_)).mkString
   }
 
+  def parseData(rawData: ByteString): Bracelet = {
+    parseData(rawData.toArray)
+  }
+
   def parseData(rawData: String): Bracelet = {
+    parseData(rawData.getBytes())
+  }
+
+  def parseData(bytes: Array[Byte]): Bracelet = {
     try {
-      val value: String = rawData
-      val bytes: Array[Byte] = value.getBytes
       val startCode: Array[Byte] = Array(bytes(0), bytes(1))
       val length: String = parseLength(bytes(2))
       val command: Byte = bytes(3)
